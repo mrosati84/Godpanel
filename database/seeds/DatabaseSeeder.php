@@ -27,10 +27,12 @@ class UsersTableSeeder extends Seeder {
 	{
 		DB::table('users')->delete();
 		$faker = Faker\Factory::create();
+		$areas = ['DEV', 'PM', 'UX', 'ART', 'CLIENT', 'STRATEGY'];
 
 		for ($i = 0; $i < 50; $i++) {
 			App\User::create([
 				'email' => $faker->email,
+				'area' => array_rand($areas, $num=1),
 				'first_name' => $faker->firstName,
 				'last_name' => $faker->lastName,
 				'password' => Hash::make('123456')
