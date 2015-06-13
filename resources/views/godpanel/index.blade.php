@@ -3,28 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.3.4/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/vendor/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
 <body>
     <div class="container" ng-controller="MainCtrl" ng-app="godpanel">
         <div class="row">
             <div class="col-md-12">
-                <h1>Panel</h1>
+                <h1>GodPanel</h1>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">
                 <h3>Projects</h3>
-                <ul>
-                    <li ng-show="projects" ng-repeat="project in projects">@{{ project.name }}</li>
-                </ul>
+                <div class="list-container">
+                    <ul class="list-group">
+                        <li class="list-group-item" ng-show="projects" ng-repeat="project in projects">@{{ project.name }}</li>
+                    </ul>
+                </div>
             </div>
             <div class="col-md-4">
                 <h3>People</h3>
-                <ul>
-                    <li ng-repeat="user in users">@{{ user.first_name }} @{{ user.last_name }}</li>
-                </ul>
+                <div class="list-container">
+                    <ul class="list-group">
+                        <li class="list-group-item" ng-repeat="user in users">@{{ user.first_name }} @{{ user.last_name }}</li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -48,9 +53,9 @@
         </div>
     </div>
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="/js/vendor/moment.min.js"></script>
+    <script src="/js/vendor/jquery.min.js"></script>
+    <script src="/js/vendor/angular.min.js"></script>
     <script src="/js/controllers/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,19 @@
+.list-container {
+	max-height: 300px;
+	overflow-y: scroll;
+	border-bottom: 1px solid #DDD;
+	border-top: 1px solid #DDD;
+	border-radius: 4px;
+}
+
+.list-container > ul {
+	margin-bottom: 0;
+}
+
+.list-container > ul li:first-child {
+	border-top: none;
+}
+
+.list-container > ul li:last-child {
+	border-bottom: none;
+}
