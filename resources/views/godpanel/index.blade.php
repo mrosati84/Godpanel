@@ -4,51 +4,345 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/vendor/bootstrap-theme.css">
+    <link rel="stylesheet" href="/css/vendor/bootstrap-theme.min.css">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
 <body>
+
     <div class="container" ng-controller="MainCtrl" ng-app="godpanel">
         <div class="row">
             <div class="col-md-12">
-                <h1>GodPanel</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <h3>Projects</h3>
-                <div class="list-container">
-                    <ul class="list-group">
-                        <li class="list-group-item" ng-show="projects" ng-repeat="project in projects">@{{ project.name }}</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <h3>People</h3>
-                <div class="list-container">
-                    <ul class="list-group">
-                        <li class="list-group-item" ng-repeat="user in users">@{{ user.first_name }} @{{ user.last_name }}</li>
-                    </ul>
-                </div>
+                <h3>Timeline</h3>
+                <table border="1" width="100%">
+                    <thead>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th colspan="41">Activities</th>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td align="center" colspan="8">{{ $start_date->format('Y-m-d') }}</td>
+
+                            @for ($i = 0; $i < $days; $i++)
+                            <td align="center" colspan="8">{{ date_add($start_date, date_interval_create_from_date_string('1 days'))->format('Y-m-d') }}</td>
+                            @endfor
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="3">Matteo Rosati</td>
+                            <td>Telecom</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>Alessi</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>TIM</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="4">Maurizio Fiaschini</td>
+                            <td>Vespa</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>Moto Guzzi</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>Versace</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>H-ART</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                            <td class="activity">&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
-                <h3>Timeline</h3>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>User</th>
-                            <th colspan="30">Time</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="user in users">
-                            <td>@{{ user.first_name }} @{{ user.last_name }}</td>
-                            <td ng-repeat="i in range(30) track by $index">@{{ $index }}</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="btn-group">
+                    <a class="btn btn-default" href="?start_date={{ date_add($start_date, date_interval_create_from_date_string('-9 day'))->format('Y-m-d') }}&end_date={{ date_add($start_date, date_interval_create_from_date_string('4 days'))->format('Y-m-d') }}"><i class="glyphicon glyphicon-chevron-left"></i> Presvous week</a>
+                    <a class="btn btn-default" href="?start_date={{ date_add($start_date, date_interval_create_from_date_string('6 days'))->format('Y-m-d') }}&end_date={{ date_add($start_date, date_interval_create_from_date_string('4 days'))->format('Y-m-d') }}">Next week <i class="glyphicon glyphicon-chevron-right"></i></a>
+                </div>
             </div>
         </div>
     </div>
