@@ -19,8 +19,8 @@ class CreateActivitiesTable extends Migration {
 			$table->integer('user_id')->unsigned();
 			$table->foreign('project_id')->references('id')->on('projects');
 			$table->foreign('user_id')->references('id')->on('users');
-			$table->datetime('start_time');
-			$table->datetime('end_time');
+			$table->datetime('start_date');
+			$table->datetime('end_date');
 			$table->timestamps();
 		});
 	}

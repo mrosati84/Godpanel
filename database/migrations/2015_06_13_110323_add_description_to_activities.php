@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddNoteToActivities extends Migration {
+class AddDescriptionToActivities extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -14,7 +14,7 @@ class AddNoteToActivities extends Migration {
 	{
 		Schema::table('activities', function(Blueprint $table)
 		{
-			$table->text('note')->nullable();
+			$table->text('description')->nullable();
 		});
 	}
 
@@ -27,7 +27,7 @@ class AddNoteToActivities extends Migration {
 	{
 		Schema::table('activities', function(Blueprint $table)
 		{
-			$table->dropColumn('note');
+			$table->dropColumn('description');
 		});
 	}
 

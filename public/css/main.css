@@ -1,19 +1,10 @@
-.list-container {
-	max-height: 300px;
-	overflow-y: scroll;
-	border-bottom: 1px solid #DDD;
-	border-top: 1px solid #DDD;
-	border-radius: 4px;
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	overflow: hidden;
 }
-
-.list-container > ul {
-	margin-bottom: 0;
-}
-
-.list-container > ul li:first-child {
-	border-top: none;
-}
-
-.list-container > ul li:last-child {
-	border-bottom: none;
+.dhx_cal_container {
+	width: 100%;
+	height: 100%;
 }

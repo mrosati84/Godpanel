@@ -8,14 +8,16 @@ class Activity extends Model {
 
 	protected $table = 'activities';
 
-    public function user()
-    {
-        return $this->belongsTo('App\User');
-    }
+	protected $fillable = ['description', 'user_id', 'project_id', 'start_date', 'end_date'];
 
-    public function project()
-    {
-        return $this->belongsTo('App\Project');
-    }
+	public function user()
+	{
+		return $this->belongsTo('App\User');
+	}
+
+	public function project()
+	{
+		return $this->belongsTo('App\Project');
+	}
 
 }

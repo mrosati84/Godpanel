@@ -51,35 +51,13 @@ class ActivitiesTableSeeder extends Seeder {
 	{
 		DB::table('activities')->delete();
 
-		for ($i = 0; $i < 150; $i++) {
-			App\Activity::create(['project_id' => 1, 'user_id' => 1, 'note' => null, 'start_time' => '2015-06-01 09:00:00', 'end_time' => '2015-06-01 10:00:00']);
-			App\Activity::create(['project_id' => 1, 'user_id' => 1, 'note' => null, 'start_time' => '2015-06-01 10:00:00', 'end_time' => '2015-06-01 11:00:00']);
-			App\Activity::create(['project_id' => 1, 'user_id' => 1, 'note' => null, 'start_time' => '2015-06-01 11:00:00', 'end_time' => '2015-06-01 12:00:00']);
-			App\Activity::create(['project_id' => 1, 'user_id' => 1, 'note' => null, 'start_time' => '2015-06-01 12:00:00', 'end_time' => '2015-06-01 13:00:00']);
-			App\Activity::create(['project_id' => 1, 'user_id' => 1, 'note' => null, 'start_time' => '2015-06-01 13:00:00', 'end_time' => '2015-06-01 14:00:00']);
-			App\Activity::create(['project_id' => 1, 'user_id' => 1, 'note' => null, 'start_time' => '2015-06-01 14:00:00', 'end_time' => '2015-06-01 15:00:00']);
-			App\Activity::create(['project_id' => 1, 'user_id' => 1, 'note' => null, 'start_time' => '2015-06-01 15:00:00', 'end_time' => '2015-06-01 16:00:00']);
-			App\Activity::create(['project_id' => 1, 'user_id' => 1, 'note' => null, 'start_time' => '2015-06-01 16:00:00', 'end_time' => '2015-06-01 17:00:00']);
+		// App\Activity::create(['project_id' => 1, 'user_id' => 1, 'description' => 'Lorem ipsum', 'start_date' => '2015-06-14 09:00:00', 'end_date' => '2015-06-14 13:00:00']);
+		// App\Activity::create(['project_id' => 2, 'user_id' => 1, 'description' => 'Lorem ipsum', 'start_date' => '2015-06-14 13:00:00', 'end_date' => '2015-06-14 17:00:00']);
 
-			App\Activity::create(['project_id' => 2, 'user_id' => 2, 'note' => null, 'start_time' => '2015-06-01 09:00:00', 'end_time' => '2015-06-01 10:00:00']);
-			App\Activity::create(['project_id' => 2, 'user_id' => 2, 'note' => null, 'start_time' => '2015-06-01 10:00:00', 'end_time' => '2015-06-01 11:00:00']);
-			App\Activity::create(['project_id' => 2, 'user_id' => 2, 'note' => null, 'start_time' => '2015-06-01 11:00:00', 'end_time' => '2015-06-01 12:00:00']);
-			App\Activity::create(['project_id' => 2, 'user_id' => 2, 'note' => null, 'start_time' => '2015-06-01 12:00:00', 'end_time' => '2015-06-01 13:00:00']);
+		// App\Activity::create(['project_id' => 2, 'user_id' => 2, 'description' => 'Lorem ipsum', 'start_date' => '2015-06-15 13:00:00', 'end_date' => '2015-06-15 17:00:00']);
 
-			App\Activity::create(['project_id' => 3, 'user_id' => 2, 'note' => null, 'start_time' => '2015-06-01 13:00:00', 'end_time' => '2015-06-01 14:00:00']);
-			App\Activity::create(['project_id' => 3, 'user_id' => 2, 'note' => null, 'start_time' => '2015-06-01 14:00:00', 'end_time' => '2015-06-01 15:00:00']);
-			App\Activity::create(['project_id' => 3, 'user_id' => 2, 'note' => null, 'start_time' => '2015-06-01 15:00:00', 'end_time' => '2015-06-01 16:00:00']);
-			App\Activity::create(['project_id' => 3, 'user_id' => 2, 'note' => null, 'start_time' => '2015-06-01 16:00:00', 'end_time' => '2015-06-01 17:00:00']);
+		// App\Activity::create(['project_id' => 3, 'user_id' => 3, 'description' => 'Lorem ipsum', 'start_date' => '2015-06-15 09:00:00', 'end_date' => '2015-06-15 17:00:00']);
 
-			App\Activity::create(['project_id' => 3, 'user_id' => 3, 'note' => null, 'start_time' => '2015-06-02 13:00:00', 'end_time' => '2015-06-02 14:00:00']);
-			App\Activity::create(['project_id' => 3, 'user_id' => 3, 'note' => null, 'start_time' => '2015-06-02 14:00:00', 'end_time' => '2015-06-02 15:00:00']);
-			App\Activity::create(['project_id' => 3, 'user_id' => 3, 'note' => null, 'start_time' => '2015-06-02 15:00:00', 'end_time' => '2015-06-02 16:00:00']);
-			App\Activity::create(['project_id' => 3, 'user_id' => 3, 'note' => null, 'start_time' => '2015-06-02 16:00:00', 'end_time' => '2015-06-02 17:00:00']);
-
-			App\Activity::create(['project_id' => 4, 'user_id' => 4, 'note' => null, 'start_time' => '2015-06-03 09:00:00', 'end_time' => '2015-06-03 10:00:00']);
-			App\Activity::create(['project_id' => 4, 'user_id' => 4, 'note' => null, 'start_time' => '2015-06-03 10:00:00', 'end_time' => '2015-06-03 11:00:00']);
-			App\Activity::create(['project_id' => 4, 'user_id' => 4, 'note' => null, 'start_time' => '2015-06-03 11:00:00', 'end_time' => '2015-06-03 12:00:00']);
-			App\Activity::create(['project_id' => 4, 'user_id' => 4, 'note' => null, 'start_time' => '2015-06-03 12:00:00', 'end_time' => '2015-06-03 13:00:00']);
-		}
+		// App\Activity::create(['project_id' => 4, 'user_id' => 4, 'description' => 'Lorem ipsum', 'start_date' => '2015-06-16 09:00:00', 'end_date' => '2015-06-16 13:00:00']);
 	}
 }
