@@ -38,7 +38,7 @@ function init (users, projects) {
 	// set the event label in timeline view
 	scheduler.templates.event_bar_text = function (start, end, ev) {
 		for (var i = 0; i < projects.length; i++) {
-			if (projects[i].key === ev.project_id) {
+			if (parseInt(projects[i].key) === parseInt(ev.project_id)) {
 				return projects[i]['label'] + ' / ' + ev.description;
 			}
 		}
