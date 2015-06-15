@@ -27,10 +27,16 @@ class UsersTableSeeder extends Seeder {
 	{
 		DB::table('users')->delete();
 
-		App\User::create(['email' => 'mrosati@h-art.com', 'area' => 'DEV', 'first_name' => 'Matteo', 'last_name' => 'Rosati', 'password' => Hash::make('123456')]);
-		App\User::create(['email' => 'mfiaschini@h-art.com', 'area' => 'DEV', 'first_name' => 'Maurizio', 'last_name' => 'Fiaschini', 'password' => Hash::make('123456')]);
-		App\User::create(['email' => 'lcadamuro.ce@h-art.com', 'area' => 'DEV', 'first_name' => 'Lorenzo', 'last_name' => 'Cadamuro', 'password' => Hash::make('123456')]);
-		App\User::create(['email' => 'nruggeri@h-art.com', 'area' => 'DEV', 'first_name' => 'Nicholas', 'last_name' => 'Ruggeri', 'password' => Hash::make('123456')]);
+		App\User::create(['email' => 'user1@domain.com', 'area' => 'DEV', 'first_name' => 'User', 'last_name' => '1', 'password' => Hash::make('123456')]);
+		App\User::create(['email' => 'user2@domain.com', 'area' => 'DEV', 'first_name' => 'User', 'last_name' => '2', 'password' => Hash::make('123456')]);
+		App\User::create(['email' => 'user3@domain.com', 'area' => 'DEV', 'first_name' => 'User', 'last_name' => '3', 'password' => Hash::make('123456')]);
+		App\User::create(['email' => 'user4@domain.com', 'area' => 'DEV', 'first_name' => 'User', 'last_name' => '4', 'password' => Hash::make('123456')]);
+		App\User::create(['email' => 'user5@domain.com', 'area' => 'DEV', 'first_name' => 'User', 'last_name' => '5', 'password' => Hash::make('123456')]);
+		App\User::create(['email' => 'user6@domain.com', 'area' => 'DEV', 'first_name' => 'User', 'last_name' => '6', 'password' => Hash::make('123456')]);
+		App\User::create(['email' => 'user7@domain.com', 'area' => 'DEV', 'first_name' => 'User', 'last_name' => '7', 'password' => Hash::make('123456')]);
+		App\User::create(['email' => 'user8@domain.com', 'area' => 'DEV', 'first_name' => 'User', 'last_name' => '8', 'password' => Hash::make('123456')]);
+		App\User::create(['email' => 'user9@domain.com', 'area' => 'DEV', 'first_name' => 'User', 'last_name' => '9', 'password' => Hash::make('123456')]);
+		App\User::create(['email' => 'user10@domain.com', 'area' => 'DEV', 'first_name' => 'User', 'last_name' => '10', 'password' => Hash::make('123456')]);
 	}
 }
 
@@ -39,10 +45,14 @@ class ProjectsTableSeeder extends Seeder {
 	{
 		DB::table('projects')->delete();
 
-		App\Project::create(['name' => 'Telecom']);
-		App\Project::create(['name' => 'Mutti']);
-		App\Project::create(['name' => 'Silversea']);
-		App\Project::create(['name' => 'Intesa San Paolo']);
+		App\Project::create(['name' => 'Project 1']);
+		App\Project::create(['name' => 'Project 2']);
+		App\Project::create(['name' => 'Project 3']);
+		App\Project::create(['name' => 'Project 4']);
+		App\Project::create(['name' => 'Project 5']);
+		App\Project::create(['name' => 'Project 6']);
+		App\Project::create(['name' => 'Project 7']);
+		App\Project::create(['name' => 'Project 8']);
 	}
 }
 
