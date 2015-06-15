@@ -1,4 +1,4 @@
-function init (users, projects) {
+function init (users, projects, activities) {
 
 	scheduler.locale.labels.timeline_tab = "Timeline"
 
@@ -26,11 +26,12 @@ function init (users, projects) {
 		render: "bar"
 	});
 
+	// set the scheduler event window sections
 	scheduler.config.lightbox.sections = [
-		{ name: "description", height: 130, type: "textarea",                     map_to: "description",      focus: true},
-		{ name: "users",       height: 23,  type: "select",    options: users,    map_to: "user_id"               },
-		{ name: "projects",    height: 23,  type: "select",    options: projects, map_to: 'project_id'            },
-		{ name: "time",        height: 72,  type: "time",                         map_to: "auto"                  }
+		{ name: "description", height: 130, type: "textarea",                     map_to: "description",      focus: true },
+		{ name: "users",       height: 23,  type: "select",    options: users,    map_to: "user_id"                       },
+		{ name: "projects",    height: 23,  type: "select",    options: projects, map_to: 'project_id'                    },
+		{ name: "time",        height: 72,  type: "time",                         map_to: "auto"                          }
 	]
 
 	scheduler.init('scheduler_here', new Date(), "timeline");
@@ -44,9 +45,7 @@ function init (users, projects) {
 		}
 	};
 
-	$.get('/api/v1/scheduler/activities', {}, function (data) {
-		scheduler.parse(data, "json");
-	});
+	scheduler.parse(activities, "json");
 
 	/**
 	 * [convertToDateTime description]
@@ -64,6 +63,11 @@ function init (users, projects) {
 		return year+'-'+month+'-'+day+' '+hours+':'+minutes+':'+seconds;
 	}
 
+	// ************************
+	// SCHEDULER EVENT HANDLING
+	// ************************
+
+	// Save an event
 	scheduler.attachEvent("onEventSave", function(id, ev, is_new) {
 		var start_date = ev.start_date,
 			end_date = ev.end_date;
@@ -86,7 +90,8 @@ function init (users, projects) {
 		return true;
 	});
 
-	scheduler.attachEvent("onEventChanged", function(id, ev){
+	// Change an event
+	scheduler.attachEvent("onEventChanged", function (id, ev) {
 		$.post('/api/v1/activities/' + id + '/edit', {
 			'description': ev.description,
 			'user_id': ev.user_id,
@@ -97,6 +102,7 @@ function init (users, projects) {
 		});
 	});
 
+	// Delete an event
 	scheduler.attachEvent("onEventDeleted", function (id){
 		if (id) {
 			$.post('/api/v1/activities/' + id + '/delete', {}, function (response) {});
@@ -104,8 +110,11 @@ function init (users, projects) {
 	});
 }
 
+// Bootstrap the application
 $.get('/api/v1/scheduler/users', {}, function (users) {
 	$.get('/api/v1/scheduler/projects', {}, function (projects) {
-		init(users, projects);
+		$.get('/api/v1/scheduler/activities', {}, function (activities) {
+			init(users, projects, activities);
+		});
 	});
 });
