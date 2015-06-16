@@ -6,6 +6,10 @@ use DB;
 
 class ProjectRepository {
 
+    /**
+     * Get all the projects (for scheduler)
+     * @return Array all the projects
+     */
     public function findAll()
     {
         return DB::table('projects')

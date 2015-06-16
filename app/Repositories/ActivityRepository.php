@@ -6,6 +6,10 @@ use DB;
 
 class ActivityRepository {
 
+    /**
+     * Get all the activities (for scheduler)
+     * @return Array all the activities
+     */
     public function findAll()
     {
         return DB::table('activities')
