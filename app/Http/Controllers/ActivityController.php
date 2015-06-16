@@ -6,36 +6,29 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Activity;
+use App\Managers\ActivityManager;
 
 class ActivityController extends Controller {
 
-	public function store(Request $request)
-	{
-		$activity = Activity::create($request->all());
+    public function store(Request $request, ActivityManager $manager)
+    {
+        $id = $manager->createActivity($request);
 
-		return response()->json(['id' => $activity->id], 200);
-	}
+        return response()->json(['id' => $id], 200);
+    }
 
-	public function update (Request $request, $id)
-	{
-		$activity = Activity::find($id);
+    public function update (Request $request, ActivityManager $manager, $id)
+    {
+        $manager->updateActivity($request, $id);
 
-		$activity->description = $request->get('description');
-		$activity->start_date = $request->get('start_date');
-		$activity->end_date = $request->get('end_date');
-		$activity->user_id = $request->get('user_id');
-		$activity->project_id = $request->get('project_id');
+        return response()->json(null, 200);
+    }
 
-		$activity->save();
+    public function destroy($id)
+    {
+        Activity::destroy($id);
 
-		return response()->json(null, 200);
-	}
-
-	public function destroy($id)
-	{
-		Activity::destroy($id);
-
-		return response()->json(null, 200);
-	}
+        return response()->json(null, 200);
+    }
 
 }
