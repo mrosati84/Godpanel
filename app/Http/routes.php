@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Http\Request;
+
 Route::get('/', 'GodpanelController@index');
 
 Route::group(['prefix' => 'api/v1'], function ()
@@ -19,9 +21,4 @@ Route::group(['prefix' => 'api/v1'], function ()
     Route::get('scheduler/users', 'SchedulerController@users');
     Route::get('scheduler/activities', 'SchedulerController@activities');
     Route::get('scheduler/projects', 'SchedulerController@projects');
-});
-
-Route::get('scheduler', function ()
-{
-    return view('scheduler');
 });

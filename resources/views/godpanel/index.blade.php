@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/vendor/bootstrap-theme.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <meta charset="UTF-8" />
+    <title>Timeline View Demo - dhtmlxScheduler</title>
+    <meta name="token" content="{{ csrf_token() }}">
+
+    <link rel='stylesheet' type='text/css' href='/codebase/dhtmlxscheduler_flat.css'>
+    <link rel='stylesheet' type='text/css' href='/css/main.css'>
 </head>
 <body>
-
-    <div class="container" ng-controller="MainCtrl" ng-app="godpanel">
-        <div class="row">
-            <div class="col-md-12">
-                <h3>Timeline</h3>
-
-            </div>
+    <div id="scheduler_here" class="dhx_cal_container">
+        <div class="dhx_cal_navline">
+            <div class="dhx_cal_prev_button">&nbsp;</div>
+            <div class="dhx_cal_next_button">&nbsp;</div>
+            <div class="dhx_cal_today_button"></div>
+            <div class="dhx_cal_date"></div>
         </div>
+        <div class="dhx_cal_header"></div>
+        <div class="dhx_cal_data"></div>
     </div>
 
     <script src="/js/vendor/jquery.min.js"></script>
-    <script src="/js/vendor/angular.min.js"></script>
-    <script src="/js/controllers/main.js"></script>
+    <script src='/codebase/dhtmlxscheduler.js' type="text/javascript" charset="utf-8"></script>
+    <script src='/codebase/ext/dhtmlxscheduler_timeline.js' type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
 </body>
 </html>

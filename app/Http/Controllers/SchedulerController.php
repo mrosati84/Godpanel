@@ -13,7 +13,6 @@ class SchedulerController extends Controller {
 
 	public function users(Request $request)
 	{
-
 		return DB::table('users')
 			->select('id as key')
 			->addSelect(DB::raw('CONCAT_WS(\' \', first_name, last_name) AS label'))

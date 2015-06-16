@@ -16,14 +16,7 @@ class GodpanelController extends Controller {
 	 */
 	public function index(Request $request)
 	{
-		$start_date = new DateTime($request->get('start_date'));
-		$end_date = new DateTime($request->get('end_date'));
-
-		return view('godpanel/index', [
-			'start_date' => $start_date,
-			'end_date' => $end_date,
-			'days' => date_diff($end_date, $start_date)->days
-		]);
+		return view('godpanel/index');
 	}
 
 }
