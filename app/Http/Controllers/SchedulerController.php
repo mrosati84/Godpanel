@@ -1,46 +1,30 @@
 <?php namespace App\Http\Controllers;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-
-use Illuminate\Http\Request;
-
-use App\User;
 use App\Activity;
+use App\Http\Controllers\Controller;
+use App\Http\Requests;
+use App\Repositories\ActivityRepository;
+use App\Repositories\ProjectRepository;
+use App\Repositories\UserRepository;
+use App\User;
 use DB;
+use Illuminate\Http\Request;
 
 class SchedulerController extends Controller {
 
-	public function users(Request $request)
+	public function users(UserRepository $repository)
 	{
-		return DB::table('users')
-			->select('id as key')
-			->addSelect(DB::raw('CONCAT_WS(\' \', first_name, last_name) AS label'))
-			->orderBy('last_name')
-			->get();
+		return $repository->findAll();
 	}
 
-	public function projects()
+	public function projects(ProjectRepository $repository)
 	{
-		return DB::table('projects')
-			->select('id as key')
-			->addSelect('name as label')
-			->orderBy('name')
-			->get();
+		return $repository->findAll();
 	}
 
-	public function activities()
+	public function activities(ActivityRepository $repository)
 	{
-		return DB::table('activities')
-			->join('projects', 'activities.project_id', '=', 'projects.id')
-			->join('users', 'activities.user_id', '=', 'users.id')
-			->select('activities.id')
-			->addSelect('users.id as user_id')
-			->addSelect('projects.id as project_id')
-			->addSelect('start_date')
-			->addSelect('end_date')
-			->addSelect('description')
-			->get();
+		return $repository->findAll();
 	}
 
 }
