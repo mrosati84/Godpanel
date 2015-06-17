@@ -20,7 +20,8 @@
         <div class="dhx_cal_data"></div>
     </div>
 
-    <script src="/js/vendor/jquery.min.js"></script>
+    <script src="/js/vendor/zepto.min.js"></script>
+    <script src="/js/vendor/velocity.min.js"></script>
     <script src='/codebase/dhtmlxscheduler.js' type="text/javascript" charset="utf-8"></script>
     <script src='/codebase/ext/dhtmlxscheduler_timeline.js' type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript" src="/js/main.js"></script>
