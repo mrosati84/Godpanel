@@ -1,3 +1,6 @@
+var x_size = 7,
+    x_length = 7;
+
 function init (users, projects, activities) {
 
 	scheduler.locale.labels.timeline_tab = "Timeline"
@@ -12,19 +15,21 @@ function init (users, projects, activities) {
 	scheduler.config.xml_date = "%Y-%m-%d %H:%i";
 	scheduler.config.time_step = 60;
 
-	scheduler.createTimelineView({
+	var week_options = {
 		name: "timeline",
 		first_hour: 9,
 		last_hour: 17,
 		x_unit: "day",
 		x_date: "%d %F",
-		x_size: 5,
+		x_size: x_size,
 		x_start: 0,
-		x_length: 5,
+		x_length: x_length,
 		y_unit: users,
 		y_property: "user_id",
 		render: "bar"
-	});
+	}
+
+	scheduler.createTimelineView(week_options);
 
 	// set the scheduler event window sections
 	scheduler.config.lightbox.sections = [
@@ -117,4 +122,35 @@ $.get('/api/v1/scheduler/users', {}, function (users) {
 			init(users, projects, activities);
 		});
 	});
+});
+
+$('.change-timeline-length').on('click', function () {
+	var action = $(this).data('action');
+
+	switch (action) {
+		case 'plus':
+		x_size--;
+		x_length--;
+		break;
+
+		case 'minus':
+		x_size++;
+		x_length++;
+		break;
+
+		case 'month':
+		x_size = 30;
+		x_length = 30;
+		break;
+
+		case 'week':
+		x_size = 7;
+		x_length = 7;
+		break;
+	}
+
+	scheduler.matrix['timeline'].x_size = x_size;
+	scheduler.matrix['timeline'].x_length = x_length;
+
+	scheduler.setCurrentView();
 });

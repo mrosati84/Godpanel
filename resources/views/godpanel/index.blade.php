@@ -5,10 +5,18 @@
     <title>Timeline View Demo - dhtmlxScheduler</title>
     <meta name="token" content="{{ csrf_token() }}">
 
-    <link rel='stylesheet' type='text/css' href='/codebase/dhtmlxscheduler_flat.css'>
-    <link rel='stylesheet' type='text/css' href='/css/main.css'>
+    <link rel="stylesheet" href="/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/vendor/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/codebase/dhtmlxscheduler_flat.css">
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
+    <div class="btn-group nav-buttons">
+        <button class="btn btn-default change-timeline-length" data-action="minus"><i class="glyphicon glyphicon-minus"></i></button>
+        <button class="btn btn-default change-timeline-length" data-action="plus"><i class="glyphicon glyphicon-plus"></i></button>
+        <button class="btn btn-default change-timeline-length" data-action="month">Month</button>
+        <button class="btn btn-default change-timeline-length" data-action="week">Week</button>
+    </div>
     <div id="scheduler_here" class="dhx_cal_container">
         <div class="dhx_cal_navline">
             <div class="dhx_cal_prev_button">&nbsp;</div>
