@@ -16,6 +16,7 @@
         <button class="btn btn-default change-timeline-length" data-action="plus"><i class="glyphicon glyphicon-plus"></i></button>
         <button class="btn btn-default change-timeline-length" data-action="month">Month</button>
         <button class="btn btn-default change-timeline-length" data-action="week">Week</button>
+        <button class="btn btn-default change-timeline-length" data-action="day">Day</button>
     </div>
     <div id="scheduler_here" class="dhx_cal_container">
         <div class="dhx_cal_navline">
