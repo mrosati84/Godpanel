@@ -130,6 +130,7 @@ $.get('/api/v1/scheduler/users', {}, function (users) {
 	});
 });
 
+// handle buttons to change scheduler time
 $('.change-timeline-length').on('click', function () {
 	var action = $(this).data('action');
 
@@ -162,8 +163,10 @@ $('.change-timeline-length').on('click', function () {
 		break;
 	}
 
+	// update scheduler options
 	scheduler.matrix['timeline'].x_size = x_size;
 	scheduler.matrix['timeline'].x_length = x_length;
 
+	// refresh the scheduler view
 	scheduler.setCurrentView();
 });
