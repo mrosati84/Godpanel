@@ -2,9 +2,10 @@
 
 use Illuminate\Http\Request;
 
-Route::get('/', ['uses' => 'GodpanelController@index', 'as' => 'godpanel.index']);
+Route::get('/', ['uses' => 'GodpanelController@index', 'as' => 'godpanel.index',
+    'middleware' => 'auth']);
 
-Route::group(['prefix' => 'api/v1'], function ()
+Route::group(['prefix' => 'api/v1', 'middleware' => 'auth'], function ()
 {
     Route::get('projects', 'ProjectsController@index');
     Route::post('projects', 'ProjectsController@store');
