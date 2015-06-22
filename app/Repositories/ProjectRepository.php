@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Repositories;
+namespace app\Repositories;
 
 use DB;
 
-class ProjectRepository {
-
+class ProjectRepository
+{
     /**
      * Get all the projects (for scheduler)
      * @return Array all the projects

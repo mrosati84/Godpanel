@@ -10,21 +10,21 @@ use App\User;
 use DB;
 use Illuminate\Http\Request;
 
-class SchedulerController extends Controller {
+class SchedulerController extends Controller
+{
+    public function users(UserRepository $repository)
+    {
+        return $repository->findAll();
+    }
 
-	public function users(UserRepository $repository)
-	{
-		return $repository->findAll();
-	}
+    public function projects(ProjectRepository $repository)
+    {
+        return $repository->findAll();
+    }
 
-	public function projects(ProjectRepository $repository)
-	{
-		return $repository->findAll();
-	}
-
-	public function activities(ActivityRepository $repository)
-	{
-		return $repository->findAll();
-	}
+    public function activities(ActivityRepository $repository)
+    {
+        return $repository->findAll();
+    }
 
 }

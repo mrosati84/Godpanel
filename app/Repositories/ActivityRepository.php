@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Repositories;
+namespace app\Repositories;
 
 use DB;
 
-class ActivityRepository {
-
+class ActivityRepository
+{
     /**
      * Get all the activities (for scheduler)
      * @return Array all the activities

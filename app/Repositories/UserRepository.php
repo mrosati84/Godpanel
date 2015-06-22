@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Repositories;
+namespace app\Repositories;
 
 use DB;
 
-class UserRepository {
-
+class UserRepository
+{
     /**
      * Get all the users (for scheduler)
      * @return Array all the users

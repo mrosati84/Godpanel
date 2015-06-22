@@ -1,14 +1,14 @@
 <?php
 
-namespace App;
+namespace app;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Project extends Model {
-
+class Project extends Model
+{
     protected $fillable = ['name'];
 
-	public function activities()
+    public function activities()
     {
         return $this->hasMany('App\Activity');
     }

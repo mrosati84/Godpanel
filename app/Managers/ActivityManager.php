@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Managers;
+namespace app\Managers;
 
 use Illuminate\Http\Request;
 use App\Activity;
 
-class ActivityManager {
-
+class ActivityManager
+{
     /**
      * Create a new activity and return its id
      * @param  Request $request the HTTP request

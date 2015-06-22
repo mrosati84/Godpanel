@@ -1,23 +1,23 @@
 <?php
 
-namespace App;
+namespace app;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Activity extends Model {
+class Activity extends Model
+{
+    protected $table = 'activities';
 
-	protected $table = 'activities';
+    protected $fillable = ['description', 'user_id', 'project_id', 'start_date', 'end_date'];
 
-	protected $fillable = ['description', 'user_id', 'project_id', 'start_date', 'end_date'];
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 
-	public function user()
-	{
-		return $this->belongsTo('App\User');
-	}
-
-	public function project()
-	{
-		return $this->belongsTo('App\Project');
-	}
+    public function project()
+    {
+        return $this->belongsTo('App\Project');
+    }
 
 }
