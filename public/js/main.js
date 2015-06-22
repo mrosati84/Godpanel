@@ -9,7 +9,7 @@ var x_size = WEEK,
 
 function init (users, projects, activities) {
 
-	scheduler.locale.labels.timeline_tab = "Timeline"
+	scheduler.locale.labels.timeline_tab = "Timeline";
 
 	scheduler.locale.labels.section_users = "User";
 	scheduler.locale.labels.section_projects = "Project";
@@ -33,7 +33,7 @@ function init (users, projects, activities) {
 		y_unit: users,
 		y_property: "user_id",
 		render: "bar"
-	}
+	};
 
 	scheduler.createTimelineView(week_options);
 
@@ -43,7 +43,7 @@ function init (users, projects, activities) {
 		{ name: "users",	   height: 23,  type: "select",	options: users,	map_to: "user_id"					   },
 		{ name: "projects",	height: 23,  type: "select",	options: projects, map_to: 'project_id'					},
 		{ name: "time",		height: 72,  type: "time",						 map_to: "auto"						  }
-	]
+	];
 
 	scheduler.init('scheduler_here', new Date(), "timeline");
 
@@ -51,7 +51,7 @@ function init (users, projects, activities) {
 	scheduler.templates.event_bar_text = function (start, end, ev) {
 		for (var i = 0; i < projects.length; i++) {
 			if (parseInt(projects[i].key) === parseInt(ev.project_id)) {
-				return projects[i]['label'] + ' / ' + ev.description;
+				return projects[i].label + ' / ' + ev.description;
 			}
 		}
 	};
@@ -72,7 +72,7 @@ function init (users, projects, activities) {
 			seconds = (date.getSeconds() < 10) ? '0' + date.getSeconds() : date.getSeconds();
 
 		return year+'-'+month+'-'+day+' '+hours+':'+minutes+':'+seconds;
-	}
+	};
 
 	// ************************
 	// SCHEDULER EVENT HANDLING
@@ -164,8 +164,8 @@ $('.change-timeline-length').on('click', function () {
 	}
 
 	// update scheduler options
-	scheduler.matrix['timeline'].x_size = x_size;
-	scheduler.matrix['timeline'].x_length = x_length;
+	scheduler.matrix.timeline.x_size = x_size;
+	scheduler.matrix.timeline.x_length = x_length;
 
 	// refresh the scheduler view
 	scheduler.setCurrentView();
