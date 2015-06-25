@@ -14,7 +14,7 @@ class AddPermissionsToUsers extends Migration {
 	{
 		Schema::table('users', function(Blueprint $table)
 		{
-			$table->string('permissions');
+			$table->string('permissions')->nullable();
 		});
 	}
 
