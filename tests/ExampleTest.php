@@ -11,7 +11,14 @@ class ExampleTest extends TestCase {
 	{
 		$response = $this->call('GET', '/');
 
-		$this->assertEquals(200, $response->getStatusCode());
+		$this->assertEquals(302, $response->getStatusCode());
+	}
+
+	public function testUserFullNameMethod()
+	{
+		$user = App\User::first();
+
+		$this->assertEquals('User 1', $user->full_name);
 	}
 
 }
