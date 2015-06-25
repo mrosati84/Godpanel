@@ -1,15 +1,13 @@
 <?php
 
-use Illuminate\Support\Facades\Artisan;
-
 class TestCase extends Illuminate\Foundation\Testing\TestCase {
 
 	public function setUp()
 	{
 		parent::setUp();
 
-		Artisan::call('migrate:refresh');
-		Artisan::call('db:seed');
+		$this->artisan('migrate:refresh');
+		$this->artisan('db:seed');
 	}
 
 	/**
