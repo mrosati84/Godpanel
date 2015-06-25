@@ -4,7 +4,7 @@ class ExampleTest extends TestCase {
 
 	public function test_home_page_as_anonymous_user()
 	{
-		$response = $this->call('GET', '/');
+		$response = $this->route('GET', 'godpanel.index');
 
 		$this->assertResponseStatus(302);
 		$this->assertRedirectedToRoute('auth.index');
@@ -14,7 +14,7 @@ class ExampleTest extends TestCase {
 	{
 		$this->be(App\User::first());
 
-		$response = $this->call('GET', '/');
+		$response = $this->route('GET', 'godpanel.index');
 
 		$this->assertResponseOk();
 	}
